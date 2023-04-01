@@ -15,6 +15,8 @@ import Link from 'next/link';
 // import { HiMail } from 'react-icons/hi';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
+import { cx } from '@/utils/cx';
+import { useScrollPosition } from '@/utils/useScrollPositions';
 
 type IMainProps = {
   meta: ReactNode;
@@ -23,17 +25,17 @@ type IMainProps = {
 
 export default function Main(props: IMainProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const scrollPos = useScrollPosition();
   return (
     <>
       {props.meta}
-      <div className="flex flex-col antialiased h-screen">
-        <div className="sticky lg:hidden">
+      <div className="flex flex-col antialiased h-screen overflow-x-hidden">
+        <div className="sticky top-0 bg-gray-200 lg:hidden">
           <div className="flex justify-between items-center px-8 py-4">
             <NextImage
-              className="w-32 md:w-40"
               src="/assets/images/logo.png"
-              width="90"
-              height="90"
+              width="64"
+              height="64"
               alt="KPJ Mesir"
             />
             <GiHamburgerMenu
@@ -85,12 +87,10 @@ export default function Main(props: IMainProps) {
             </Dialog>
           </Transition>
         </div>
-        <nav className="hidden lg:block">
+        <nav className="hidden lg:block sticky top-0 z-20 h-full bg-gray-300 ">
           <Navbar />
         </nav>
-        <main className="flex-col overflow-x-hidden h-screen px-4 py-4">
-          {props.children}
-        </main>
+        <main className="flex-col min-h-screen">{props.children}</main>
         <footer className="flex flex-col justify-center items-center mt-8 text-center text-sm py-8 bg-gray-800">
           {/* <div className="flex gap-4 mb-6 group justify-end">
             <Link href="https://whatsapp.com">
