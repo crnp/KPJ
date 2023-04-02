@@ -1,5 +1,4 @@
-import { useScrollPosition } from '@/utils/useScrollPositions';
-import { cx } from '@/utils/cx';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import {
@@ -10,6 +9,8 @@ import {
   HiOutlinePhotograph,
   HiOutlineX,
 } from 'react-icons/hi';
+
+import { cx } from '@/utils/cx';
 import Button from './Button';
 import NextImage from '../NextImage';
 
@@ -37,16 +38,10 @@ const navitems = [
 ];
 
 export default function Navbar() {
-  const scrollPos = useScrollPosition();
   const router = useRouter();
 
   return (
-    <div
-      className={cx(
-        scrollPos < 200 ? 'py-0' : 'py-0',
-        'mx-auto px-4 sm:px-6 transition-all ease-in-out'
-      )}
-    >
+    <div className="mx-auto px-4 sm:px-6">
       <div className="flex justify-between items-center py-2 px-8 xl:px-0 md:justify-start md:space-x-10">
         <div className="flex justify-start items-center lg:flex-1">
           <NextImage
@@ -55,7 +50,9 @@ export default function Navbar() {
             height="72"
             alt="KPJ"
           />
-          <div className="font-bold">KPJ Mesir</div>
+          <div className="font-bold text-xl text-white translate-y-2">
+            KPJ MESIR
+          </div>
         </div>
         <nav className="flex space-x-10">
           {navitems.map((item) => (

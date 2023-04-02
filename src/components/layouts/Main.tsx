@@ -29,7 +29,7 @@ export default function Main(props: IMainProps) {
   return (
     <>
       {props.meta}
-      <div className="flex flex-col antialiased h-screen overflow-x-hidden">
+      <div className="flex flex-col antialiased h-screen">
         <div className="sticky top-0 bg-gray-200 lg:hidden">
           <div className="flex justify-between items-center px-8 py-4">
             <NextImage
@@ -87,7 +87,12 @@ export default function Main(props: IMainProps) {
             </Dialog>
           </Transition>
         </div>
-        <nav className="hidden lg:block sticky top-0 z-20 h-full bg-gray-300 ">
+        <nav
+          className={cx(
+            scrollPos < 200 ? 'bg-kpj-brown' : 'bg-gray-300',
+            'hidden lg:block sticky top-0 z-20 h-full  transition-all ease-in-out'
+          )}
+        >
           <Navbar />
         </nav>
         <main className="flex-col min-h-screen">{props.children}</main>

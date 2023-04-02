@@ -12,7 +12,8 @@ module.exports = {
       },
       colors: {
         kpj: {
-          orange: '#EF8B47',
+          orange: '#E4572E',
+          brown: '#2F272A',
         },
       },
     },
