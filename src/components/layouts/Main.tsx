@@ -116,7 +116,15 @@ export default function Main(props: IMainProps) {
             © {new Date().getFullYear()} Keluarga Pelajar Jakarta Mesir, All
             Rights Reserved.
           </span>
-          <span className="text-white">Developed by CPR Studios.</span>
+          <div className="flex flex-row gap-1">
+            <span className="text-white">Developed by</span>
+            <a href="https://instagram.com/cpr.studios" target="_blank">
+              <span className="group transition duration-300 font-semibold text-white">
+                CPR Studios
+                <span className="block max-w-0 group-hover:max-w-full transition-all duration-400 h-0.5 bg-white"></span>
+              </span>
+            </a>
+          </div>
           {/* <span className="italic">
             Website created by <b>Calvin</b>
           </span> */}

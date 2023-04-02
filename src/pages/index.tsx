@@ -1,4 +1,3 @@
-import NextImage from '@/components/NextImage';
 import Main from '@/components/layouts/Main';
 import Meta from '@/components/layouts/Meta';
 import localFont from 'next/font/local';
@@ -8,8 +7,12 @@ import {
   RiFacebookFill,
   RiYoutubeFill,
 } from 'react-icons/ri';
-import { HiWifi, HiPhone } from 'react-icons/hi';
+import { HiPhone } from 'react-icons/hi';
+import { TbSocial } from 'react-icons/tb';
 import Carousel from '@/components/layouts/Carousel';
+import Image from 'next/image';
+
+import logo from '@/public/assets/images/logo.png';
 
 const sporta = localFont({ src: '../styles/fonts/sportaregular.ttf' });
 
@@ -20,8 +23,14 @@ export default function Home() {
         <Meta title="KPJ Mesir" description="Keluarga Pelajar Jakarta Mesir" />
       }
     >
-      <section className="flex flex-col bg-kpj-brown">
-        <div className="flex self-start my-10 lg:my-12 ml-12 lg:ml-28">
+      <section className="flex flex-col bg-kpj-brown overflow-x-hidden">
+        {/* <Image
+          src={logo}
+          alt=""
+          className="absolute left-[30vw] opacity-10"
+          width={800}
+        /> */}
+        <div className="flex flex-row w-full my-10 lg:my-12 ml-12 lg:ml-28">
           <h1
             className={`${sporta.className} text-white text-4xl md:text-7xl lg:text-8xl xl:text-9xl tracking-widest leading-normal md:leading-relaxed lg:leading-relaxed xl:leading-relaxed`}
           >
@@ -41,7 +50,7 @@ export default function Home() {
           Jumlah Warga KPJ
         </h1>
         <h1 className="flex flex-row items-center text-kpj-orange text-3xl font-semibold self-center">
-          <p className="group transition duration-300 mr-3 cursor-pointer">
+          <p className="group transition duration-300 mr-3 cursor-pointer text-white">
             6969
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-400 h-0.5 bg-red-700"></span>
           </p>
@@ -49,7 +58,7 @@ export default function Home() {
         </h1>
         <div className="flex justify-evenly py-12">
           <div className="flex flex-col items-center gap-4">
-            <HiWifi size={150} color="white" />
+            <TbSocial size={150} color="white" />
             <p className="text-kpj-orange text-xl font-semibold">
               SOCIAL MEDIA KAMI
             </p>
