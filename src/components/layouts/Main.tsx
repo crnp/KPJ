@@ -6,13 +6,6 @@ import { Dialog, Transition } from '@headlessui/react';
 import NextImage from '@/components/NextImage';
 import Link from 'next/link';
 
-// import {
-//   RiInstagramFill,
-//   RiWhatsappFill,
-//   RiFacebookFill,
-// } from 'react-icons/ri';
-// import { IoLogoTiktok } from 'react-icons/io5';
-// import { HiMail } from 'react-icons/hi';
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import { cx } from '@/utils/cx';
@@ -29,8 +22,13 @@ export default function Main(props: IMainProps) {
   return (
     <>
       {props.meta}
-      <div className="flex flex-col antialiased h-screen">
-        <div className="sticky top-0 bg-gray-200 lg:hidden">
+      <div className="flex flex-col antialiased min-h-screen">
+        <div
+          className={cx(
+            scrollPos > 200 && 'backdrop-blur-xl',
+            'sticky top-0 lg:hidden z-20'
+          )}
+        >
           <div className="flex justify-between items-center px-8 py-4">
             <NextImage
               src="/assets/images/logo.png"
@@ -39,7 +37,7 @@ export default function Main(props: IMainProps) {
               alt="KPJ Mesir"
             />
             <GiHamburgerMenu
-              className="text-3xl"
+              className="text-3xl text-white"
               onClick={() => {
                 setIsOpen(true);
               }}
@@ -89,14 +87,14 @@ export default function Main(props: IMainProps) {
         </div>
         <nav
           className={cx(
-            scrollPos < 200 ? 'bg-kpj-brown' : 'bg-gray-300',
-            'hidden lg:block sticky top-0 z-20 h-full  transition-all ease-in-out'
+            scrollPos > 200 && 'backdrop-blur-xl',
+            'hidden lg:block sticky top-0 z-20 h-full transition-all ease-in-out'
           )}
         >
           <Navbar />
         </nav>
         <main className="flex-col min-h-screen">{props.children}</main>
-        <footer className="flex flex-col justify-center items-center mt-8 text-center text-sm py-8 bg-gray-800">
+        <footer className="flex flex-col justify-center items-center text-center text-sm py-4 bg-kpj-orange">
           {/* <div className="flex gap-4 mb-6 group justify-end">
             <Link href="https://whatsapp.com">
               <RiWhatsappFill className="text-4xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-colors duration-150 ease-in-out" />
@@ -118,6 +116,7 @@ export default function Main(props: IMainProps) {
             © {new Date().getFullYear()} Keluarga Pelajar Jakarta Mesir, All
             Rights Reserved.
           </span>
+          <span className="text-white">Developed by CPR Studios.</span>
           {/* <span className="italic">
             Website created by <b>Calvin</b>
           </span> */}

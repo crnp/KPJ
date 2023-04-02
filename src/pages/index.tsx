@@ -1,9 +1,15 @@
 import NextImage from '@/components/NextImage';
 import Main from '@/components/layouts/Main';
 import Meta from '@/components/layouts/Meta';
-import Head from 'next/head';
-import Image from 'next/image';
 import localFont from 'next/font/local';
+import {
+  RiInstagramFill,
+  RiWhatsappFill,
+  RiFacebookFill,
+  RiYoutubeFill,
+} from 'react-icons/ri';
+import { HiWifi, HiPhone } from 'react-icons/hi';
+import Carousel from '@/components/layouts/Carousel';
 
 const sporta = localFont({ src: '../styles/fonts/sportaregular.ttf' });
 
@@ -14,66 +20,72 @@ export default function Home() {
         <Meta title="KPJ Mesir" description="Keluarga Pelajar Jakarta Mesir" />
       }
     >
-      <section className="flex flex-col items-start p-8 bg-kpj-brown overflow-x-hidden">
-        <div className="flex my-12 ml-16">
+      <section className="flex flex-col bg-kpj-brown">
+        <div className="flex self-start my-10 lg:my-12 ml-12 lg:ml-28">
           <h1
-            className={`${sporta.className} text-white text-9xl tracking-widest leading-normal`}
+            className={`${sporta.className} text-white text-4xl md:text-7xl lg:text-8xl xl:text-9xl tracking-widest leading-normal md:leading-relaxed lg:leading-relaxed xl:leading-relaxed`}
           >
             KELUARGA
             <br />
             PELAJAR JAKARTA
           </h1>
         </div>
-        <div className="flex flex-row mx-auto gap-8">
-          <NextImage
-            useSkeleton
-            src="/assets/images/test.jpg"
-            width="400"
-            height="0"
-            alt="KPJ"
-            className="-translate-y-5 hover:scale-105 transition-all ease-in-out"
-            imgClassName="rounded-3xl"
-          />
-          <NextImage
-            useSkeleton
-            src="/assets/images/thumbnail.jpg"
-            width="400"
-            height="0"
-            alt="KPJ"
-            className="hover:scale-105 transition-all ease-in-out"
-            imgClassName="rounded-3xl"
-          />
-          <NextImage
-            useSkeleton
-            src="/assets/images/test.jpg"
-            width="400"
-            height="0"
-            alt="KPJ"
-            className="-translate-y-5 hover:scale-105 transition-all ease-in-out"
-            imgClassName="rounded-3xl"
-          />
-          <NextImage
-            useSkeleton
-            src="/assets/images/thumbnail.jpg"
-            width="400"
-            height="0"
-            alt="KPJ"
-            className="hover:scale-105 transition-all ease-in-out"
-            imgClassName="rounded-3xl"
-          />
-        </div>
       </section>
-      <section className="flex flex-col justify-center items-center p-8 bg-gray-700 overflow-x-hidden">
-        <h1 className="text-kpj-orange text-4xl font-semibold mb-4">
+      <Carousel />
+      <section className="flex flex-col justify-center p-8 bg-kpj-brown">
+        <span className="w-full mx-auto my-14 p-[1px] bg-black lg:w-5/6"></span>
+        <h1 className="text-kpj-orange text-4xl font-semibold mb-4 self-center">
           {/* <h1
           className={`text-kpj-orange text-4xl font-semibold mb-4 ${sporta.className}`}
         > */}
-          Warga KPJ Mesir
+          Jumlah Warga KPJ
         </h1>
-        <h1 className="text-kpj-orange text-3xl font-semibold">
-          <span className="underline mr-3">6969</span>
+        <h1 className="flex flex-row items-center text-kpj-orange text-3xl font-semibold self-center">
+          <p className="group transition duration-300 mr-3 cursor-pointer">
+            6969
+            <span className="block max-w-0 group-hover:max-w-full transition-all duration-400 h-0.5 bg-red-700"></span>
+          </p>
           <span className="text-sm">Warga</span>
         </h1>
+        <div className="flex justify-evenly py-12">
+          <div className="flex flex-col items-center gap-4">
+            <HiWifi size={150} color="white" />
+            <p className="text-kpj-orange text-xl font-semibold">
+              SOCIAL MEDIA KAMI
+            </p>
+            <div className="flex gap-5">
+              <a href="https://facebook.com/kpjmesir" target="_blank">
+                <RiFacebookFill
+                  size={40}
+                  color="white"
+                  className="transition duration-100 ease-in-out p-0.5 hover:scale-125 hover:bg-kpj-orange rounded-lg"
+                />
+              </a>
+
+              <a href="https://instagram.com/kpjmesir" target="_blank">
+                <RiInstagramFill
+                  size={40}
+                  color="white"
+                  className="transition duration-100 ease-in-out p-0.5 hover:scale-125 hover:bg-kpj-orange rounded-lg"
+                />
+              </a>
+              <a href="https://youtube.com/kpjmesir" target="_blank">
+                <RiYoutubeFill
+                  size={40}
+                  color="white"
+                  className="transition duration-100 ease-in-out p-0.5 hover:scale-125 hover:bg-kpj-orange rounded-lg"
+                />
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-col items-center gap-4">
+            <HiPhone size={150} color="white" />
+            <p className="text-kpj-orange text-xl font-semibold">HOTLINE KPJ</p>
+            <p className="text-white font-semibold text-3xl transition duration-100 hover:scale-105 hover:text-kpj-orange">
+              +20123123123
+            </p>
+          </div>
+        </div>
       </section>
     </Main>
   );

@@ -8,6 +8,6 @@ html {
 
 @layer base {
   body {
-    @apply bg-white font-sans;
+    @apply bg-kpj-brown font-sans;
   }
 }
