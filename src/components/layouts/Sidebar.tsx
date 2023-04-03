@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import NextImage from '../NextImage';
 
 export default function Sidebar() {

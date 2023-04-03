@@ -4,7 +4,6 @@ import type { ReactNode } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { Dialog, Transition } from '@headlessui/react';
 import NextImage from '@/components/NextImage';
-import Link from 'next/link';
 
 import Sidebar from './Sidebar';
 import Navbar from './Navbar';
@@ -87,34 +86,17 @@ export default function Main(props: IMainProps) {
         </div>
         <nav
           className={cx(
-            scrollPos > 200 && 'backdrop-blur-xl',
-            'hidden lg:block sticky top-0 z-20 h-full transition-all ease-in-out'
+            // scrollPos > 50 && 'backdrop-blur-xl',
+            'hidden backdrop-blur-xl lg:block sticky top-0 z-20 h-full transition-all ease-in-out'
           )}
         >
           <Navbar />
         </nav>
         <main className="flex-col min-h-screen">{props.children}</main>
-        <footer className="flex flex-col justify-center items-center text-center text-sm py-4 bg-kpj-orange">
-          {/* <div className="flex gap-4 mb-6 group justify-end">
-            <Link href="https://whatsapp.com">
-              <RiWhatsappFill className="text-4xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-colors duration-150 ease-in-out" />
-            </Link>
-            <Link href="https://instagram.com">
-              <RiInstagramFill className="text-4xl text-gray-300 cursor-pointer  hover:text-white transition-colors duration-150 ease-in-out" />
-            </Link>
-            <Link href="https://tiktok.com">
-              <IoLogoTiktok className="text-4xl text-gray-300 cursor-pointer  hover:text-white transition-colors duration-150 ease-in-out" />
-            </Link>
-            <Link href="https://facebook.com">
-              <RiFacebookFill className="text-4xl text-gray-300 cursor-pointer  hover:text-white transition-colors duration-150 ease-in-out" />
-            </Link>
-            <Link href="mailto:example@mail.com">
-              <HiMail className="text-4xl text-gray-300 cursor-pointer opacity-90 hover:text-white transition-colors duration-150 ease-in-out" />
-            </Link>
-          </div> */}
+        <footer className="flex flex-col justify-center items-center text-center text-sm py-4 px-1 bg-kpj-orange">
           <span className="text-white">
-            © {new Date().getFullYear()} Keluarga Pelajar Jakarta Mesir, All
-            Rights Reserved.
+            © {new Date().getFullYear()} Keluarga Pelajar Jakarta Mesir,{' '}
+            <span className="inline-block">All Rights Reserved.</span>
           </span>
           <div className="flex flex-row gap-1">
             <span className="text-white">Developed by</span>

@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 
 import {
@@ -18,22 +17,18 @@ const navitems = [
   {
     name: 'Home',
     href: '/',
-    icon: HiOutlineHome,
   },
   {
     name: 'Profile',
     href: '/profile',
-    icon: HiOutlineDocumentText,
   },
   {
     name: 'Galeri',
     href: '/galeri',
-    icon: HiOutlinePhotograph,
   },
   {
     name: 'Taslim',
     href: '/taslim',
-    icon: HiOutlineLocationMarker,
   },
 ];
 
@@ -50,7 +45,7 @@ export default function Navbar() {
             height="72"
             alt="KPJ"
           />
-          <div className="font-bold text-xl text-white translate-y-2">
+          <div className="font-bold text-md lg:text-xl text-white translate-y-2">
             KPJ MESIR
           </div>
         </div>
