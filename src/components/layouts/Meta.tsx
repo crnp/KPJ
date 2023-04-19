@@ -9,7 +9,11 @@ type IMetaProps = {
   canonical?: string;
 };
 
-export default function Meta(props: IMetaProps) {
+export default function Meta({
+  title = 'KPJ Mesir',
+  description = 'Keluarga Pelajar Jakarta Mesir',
+  ...props
+}: IMetaProps) {
   const router = useRouter();
   return (
     <>
@@ -46,12 +50,12 @@ export default function Meta(props: IMetaProps) {
         />
       </Head>
       <NextSeo
-        title={props.title}
-        description={props.description}
+        title={title}
+        description={description}
         canonical={props.canonical}
         openGraph={{
-          title: props.title,
-          description: props.description,
+          title: title,
+          description: description,
           url: props.canonical,
           locale: AppConfig.locale,
           site_name: AppConfig.site_name,

@@ -9,9 +9,9 @@ import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import { cx } from '@/utils/cx';
 import { useScrollPosition } from '@/utils/useScrollPositions';
+import Footer from './Footer';
 
 type IMainProps = {
-  meta: ReactNode;
   children: ReactNode;
 };
 
@@ -20,19 +20,18 @@ export default function Main(props: IMainProps) {
   const scrollPos = useScrollPosition();
   return (
     <>
-      {props.meta}
-      <div className="flex flex-col antialiased min-h-screen">
+      <div className="flex flex-col antialiased min-h-screen pattern-dots pattern-kpj-dots pattern-bg-kpj-brown pattern-size-24 pattern-opacity-100">
         <div
           className={cx(
             scrollPos > 200 && 'backdrop-blur-xl',
-            'sticky top-0 lg:hidden z-20'
+            'sticky top-0 md:hidden z-20'
           )}
         >
           <div className="flex justify-between items-center px-8 py-4">
             <NextImage
               src="/assets/images/logo.png"
-              width="64"
-              height="64"
+              width="32"
+              height="0"
               alt="KPJ Mesir"
             />
             <GiHamburgerMenu
@@ -75,7 +74,7 @@ export default function Main(props: IMainProps) {
                     className={`z-50 overflow-hidden
                          shadow-xl`}
                   >
-                    <aside className="overflow-y-auto lg:hidden">
+                    <aside className="overflow-y-auto md:hidden">
                       <Sidebar />
                     </aside>
                   </div>
@@ -87,30 +86,13 @@ export default function Main(props: IMainProps) {
         <nav
           className={cx(
             // scrollPos > 50 && 'backdrop-blur-xl',
-            'hidden backdrop-blur-xl lg:block sticky top-0 z-20 h-full transition-all ease-in-out'
+            'hidden backdrop-blur-xl md:block sticky top-0 z-20 h-full transition-all ease-in-out'
           )}
         >
           <Navbar />
         </nav>
         <main className="flex-col min-h-screen">{props.children}</main>
-        <footer className="flex flex-col justify-center items-center text-center text-sm py-4 px-1 bg-kpj-orange">
-          <span className="text-white">
-            © {new Date().getFullYear()} Keluarga Pelajar Jakarta Mesir,{' '}
-            <span className="inline-block">All Rights Reserved.</span>
-          </span>
-          <div className="flex flex-row gap-1">
-            <span className="text-white">Developed by</span>
-            <a href="https://instagram.com/cpr.studios" target="_blank">
-              <span className="group transition duration-300 font-semibold text-white">
-                CPR Studios
-                <span className="block max-w-0 group-hover:max-w-full transition-all duration-400 h-0.5 bg-white"></span>
-              </span>
-            </a>
-          </div>
-          {/* <span className="italic">
-            Website created by <b>Calvin</b>
-          </span> */}
-        </footer>
+        <Footer />
       </div>
     </>
   );

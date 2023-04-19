@@ -5,19 +5,35 @@ import 'swiper/css/free-mode';
 import { FreeMode, Autoplay } from 'swiper';
 
 import Image, { StaticImageData } from 'next/image';
+import { cx } from '@/utils/cx';
+import { useState } from 'react';
 
 type ICarouselProps = {
+  useSkeleton?: boolean;
   items: { img: StaticImageData; text: string }[];
 };
 
-export default function Carousel(props: ICarouselProps) {
+export default function Carousel({
+  useSkeleton = false,
+  ...props
+}: ICarouselProps) {
+  const [status, setStatus] = useState(useSkeleton ? 'loading' : 'complete');
+
   return (
-    <div className="bg-kpj-brown z-5">
+    <div className="z-5">
       <Swiper
         slidesPerView={3}
-        spaceBetween={40}
+        spaceBetween={20}
         centeredSlides={true}
         breakpoints={{
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+          768: {
+            slidesPerView: 4,
+            spaceBetween: 40,
+          },
           1280: {
             slidesPerView: 4,
             spaceBetween: 50,
@@ -29,7 +45,6 @@ export default function Carousel(props: ICarouselProps) {
         autoplay={{ delay: 2000, disableOnInteraction: false }}
         speed={300}
         modules={[FreeMode, Autoplay]}
-        className="bg-kpj-brown"
       >
         {props.items.map((item, index) => (
           <SwiperSlide key={index}>
@@ -38,7 +53,11 @@ export default function Carousel(props: ICarouselProps) {
                 src={item.img}
                 alt="KPJ"
                 height={300}
-                className="rounded-2xl transition duration-300 ease-in-out hover:scale-110"
+                onLoadingComplete={() => setStatus('complete')}
+                className={cx(
+                  status === 'loading' && 'animate-pulse',
+                  'rounded-2xl transition duration-300 ease-in-out hover:scale-110'
+                )}
               />
               <h2 className="text-white text-sm md:text-2xl font-bold mt-5">
                 {item.text}
