@@ -1,17 +1,5 @@
-import Main from '@/components/layouts/Main';
 import Meta from '@/components/layouts/Meta';
-import {
-  RiInstagramFill,
-  RiWhatsappFill,
-  RiFacebookFill,
-  RiYoutubeFill,
-} from 'react-icons/ri';
-import { HiPhone } from 'react-icons/hi';
-import { TbSocial } from 'react-icons/tb';
 import Carousel from '@/components/layouts/Carousel';
-import Image from 'next/image';
-
-import logo from '@/public/assets/images/logo.png';
 
 import image1 from '@/public/assets/images/test.jpg';
 import image2 from '@/public/assets/images/thumbnail.jpg';

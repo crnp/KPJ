@@ -8,8 +8,8 @@ const navItems = [
     href: '/profile',
   },
   {
-    name: 'Galeri',
-    href: '/galeri',
+    name: 'Gallery',
+    href: '/gallery',
   },
   {
     name: 'Taslim',

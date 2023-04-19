@@ -1,15 +1,5 @@
 import { useRouter } from 'next/router';
 
-import {
-  HiOutlineHome,
-  HiOutlineDocumentText,
-  HiOutlineLocationMarker,
-  HiOutlineMenu,
-  HiOutlinePhotograph,
-  HiOutlineX,
-} from 'react-icons/hi';
-
-import { cx } from '@/utils/cx';
 import Button from './Button';
 import NextImage from '../NextImage';
 import Link from 'next/link';

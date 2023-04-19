@@ -1,15 +1,12 @@
-import Main from '@/components/layouts/Main';
 import Meta from '@/components/layouts/Meta';
 import Image from 'next/image';
 import image1 from '@/public/assets/images/test.jpg';
 
 import { sporta } from '@/utils/sporta';
 import Section from '@/components/layouts/Section';
-import Divider from '@/components/layouts/Divider';
 import NextImage from '@/components/NextImage';
 import logo from '@/public/assets/images/logo.png';
 import { HiArrowDown } from 'react-icons/hi';
-import { FaCircle } from 'react-icons/fa';
 
 export default function Profile() {
   return (
