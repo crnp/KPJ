@@ -21,7 +21,7 @@ export default function Admin(props: AdminProps) {
   // const apiURL = dev
   //   ? 'http://localhost:3000/api/taslim'
   //   : 'http://localhost:3000/api/taslim';
-  const apiURL = '"https://kpjmesir.vercel.app/api/taslim"';
+  const apiURL = 'https://kpjmesir.vercel.app/api/taslim';
 
   const router = useRouter();
   const [loading, setLoading] = useState(false);
