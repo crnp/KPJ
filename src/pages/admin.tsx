@@ -50,10 +50,10 @@ export default function Admin(props: AdminProps) {
                   onClick={async (event) => {
                     setLoading(true);
                     await fetch(apiURL + '/' + t._id, {
-                      method: 'delete',
+                      method: 'DELETE',
                     });
                     setLoading(false);
-                    router.push('/admin');
+                    router.push('/');
                   }}
                   className="flex justify-center items-center rounded-md bg-red-500 text-white px-4 py-2 hover:scale-105"
                   disabled={loading}
