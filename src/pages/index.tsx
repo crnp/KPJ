@@ -3,7 +3,6 @@ import Carousel from '@/components/layouts/Carousel';
 
 import image1 from '@/public/assets/images/test.jpg';
 import image2 from '@/public/assets/images/thumbnail.jpg';
-import image3 from '@/public/assets/images/dog.jpg';
 
 import { sporta } from '@/utils/sporta';
 import Divider from '@/components/layouts/Divider';

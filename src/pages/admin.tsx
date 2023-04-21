@@ -1,4 +1,3 @@
-import { BiTrashAlt } from 'react-icons/bi';
 import { useState } from 'react';
 import { Taslim } from '@/utils/types';
 import AdminForm from '@/components/layouts/AdminForm';
@@ -18,10 +17,11 @@ export async function getServerSideProps() {
 }
 
 export default function Admin(props: AdminProps) {
-  const dev = process.env.NODE_ENV !== 'production';
-  const apiURL = dev
-    ? 'http://localhost:3000/api/taslim'
-    : 'http://localhost:3000/api/taslim';
+  // const dev = process.env.NODE_ENV !== 'production';
+  // const apiURL = dev
+  //   ? 'http://localhost:3000/api/taslim'
+  //   : 'http://localhost:3000/api/taslim';
+  const apiURL = '"https://kpjmesir.vercel.app/api/taslim"';
 
   const router = useRouter();
   const [loading, setLoading] = useState(false);

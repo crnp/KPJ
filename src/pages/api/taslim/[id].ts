@@ -15,14 +15,14 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       res.json(await Taslim.findById(id).catch(catcher));
     },
     // RESPONSE PUT REQUESTS
-    PUT: async (req: NextApiRequest, res: NextApiResponse) => {
-      const { Taslim } = await connect(); // connect to database
-      res.json(
-        await Taslim.findByIdAndUpdate(id, req.body, { new: true }).catch(
-          catcher
-        )
-      );
-    },
+    // PUT: async (req: NextApiRequest, res: NextApiResponse) => {
+    //   const { Taslim } = await connect(); // connect to database
+    //   res.json(
+    //     await Taslim.findByIdAndUpdate(id, req.body, { new: true }).catch(
+    //       catcher
+    //     )
+    //   );
+    // },
     // RESPONSE FOR DELETE REQUESTS
     DELETE: async (req: NextApiRequest, res: NextApiResponse) => {
       const { Taslim } = await connect(); // connect to database

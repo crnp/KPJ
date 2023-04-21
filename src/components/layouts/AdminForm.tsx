@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router';
-import { FormEvent, FormEventHandler, useRef, useState } from 'react';
+import { FormEventHandler, useRef, useState } from 'react';
 import { Taslim } from '@/utils/types';
 
 interface AdminFormProps {
