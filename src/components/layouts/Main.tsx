@@ -23,7 +23,7 @@ export default function Main(props: IMainProps) {
       <div className="flex flex-col antialiased min-h-screen pattern-dots pattern-kpj-dots pattern-bg-kpj-brown pattern-size-24 pattern-opacity-100">
         <div
           className={cx(
-            scrollPos > 200 && 'backdrop-blur-xl',
+            scrollPos > 200 && 'bg-kpj-brown',
             'sticky top-0 md:hidden z-20'
           )}
         >
@@ -49,7 +49,7 @@ export default function Main(props: IMainProps) {
               }}
               className="fixed z-40 inset-0 overflow-y-auto"
             >
-              <div className="flex w-3/5 md:w-5/12">
+              <div className="flex w-3/5">
                 <Transition.Child
                   as={Fragment}
                   enter="transition-opacity ease-in duration-300"

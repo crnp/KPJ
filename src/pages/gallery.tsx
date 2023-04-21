@@ -59,11 +59,11 @@ export default function Gallery() {
         >
           GALLERY
         </h1>
-        <div className="grid grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-12 px-6 md:px-8">
           {photos.map((item, index) => (
             <Image
               key={index}
-              className="rounded-2xl"
+              className="rounded-md md:rounded-lg lg:rounded-xl"
               src={item}
               width={550}
               height={0}
