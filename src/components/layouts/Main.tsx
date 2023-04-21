@@ -24,7 +24,7 @@ export default function Main(props: IMainProps) {
         <div
           className={cx(
             scrollPos > 200 && 'bg-kpj-brown',
-            'sticky top-0 md:hidden z-20'
+            'sticky top-0 md:hidden z-20 transition-colors duration-300'
           )}
         >
           <div className="flex justify-between items-center px-8 py-4">

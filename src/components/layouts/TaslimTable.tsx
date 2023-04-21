@@ -10,7 +10,7 @@ export default function TaslimTable(props: TaslimTableProps) {
     <table className="min-w-full table-auto">
       <thead>
         <tr className="bg-gray-800">
-          <th className="px-16 py-2">
+          <th className="p-2">
             <span>Nama-nama yang sudah bisa diambil iqomahnya</span>
           </th>
         </tr>

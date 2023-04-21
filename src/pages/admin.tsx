@@ -30,7 +30,7 @@ export default function Admin(props: AdminProps) {
   return (
     <>
       <AdminForm url={apiURL} />
-      <table className="min-w-full mx-auto table-auto border-collapse text-white">
+      <table className="min-w-full mx-auto table-auto border-collapse text-white h-[1px]">
         <thead>
           <tr className="bg-gray-800">
             <th className="px-16 py-2 border border-gray-400">
@@ -43,9 +43,9 @@ export default function Admin(props: AdminProps) {
         </thead>
         <tbody className="bg-gray-600 text-center">
           {taslim.map((t) => (
-            <tr key={t._id}>
-              <td className="px-16 py-2 border border-gray-400">{t.nama}</td>
-              <td className="font-bold border border-gray-400 flex justify-center">
+            <tr key={t._id} className="h-full">
+              <td className="px-4 py-2 border border-gray-400">{t.nama}</td>
+              <td className="px-4 py-2 font-bold border border-gray-400 flex justify-center h-full">
                 <button
                   onClick={async (event) => {
                     setLoading(true);
