@@ -53,8 +53,7 @@ export default function Main(props: IMainProps) {
               />
             </div>
             <ul className={cx(
-              scrollPos > 200 && 'backdrop-blur-xl',
-              isOpen ? 'block backdrop-blur-xl' : 'hidden',
+              isOpen ? 'block ' : 'hidden',
               'px-8 border-b-2 border-gray-400 font-montserrat'
             )}>
               {navItems.map((item) => (
