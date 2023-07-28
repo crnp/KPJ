@@ -72,7 +72,7 @@ export default function Main(props: IMainProps) {
         <nav
           className={cx(
             // scrollPos > 50 && 'backdrop-blur-xl',
-            'hidden backdrop-blur-xl md:block sticky top-0 z-20 h-full transition-all ease-in-out'
+            'hidden frosted-glass md:block sticky top-0 z-20 h-full transition-all ease-in-out'
           )}
         >
           <Navbar />

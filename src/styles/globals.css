@@ -14,7 +14,8 @@ html {
 
 /* slightly transparent fallback */
 .frosted-glass {
-  background-color: rgba(255, 255, 255, .9);
+  /* background-color: rgba(255, 255, 255, .4); */
+  background-color: #2F272A
 }
 
 /* if backdrop support: very transparent and blurred */
