@@ -26,9 +26,9 @@ export default function Main(props: IMainProps) {
       <div className="flex flex-col antialiased min-h-screen pattern-dots pattern-kpj-dots pattern-bg-kpj-brown pattern-size-24 pattern-opacity-100">
         <div
           className={cx(
-            scrollPos > 100 && 'backdrop-blur-xl',
-            isOpen && 'backdrop-blur-xl',
-            'sticky top-0 md:hidden z-20 transition-colors duration-300'
+            scrollPos > 100 && 'backdrop-blur-md',
+            isOpen && 'backdrop-blur-md',
+            'fixed top-0 md:hidden z-20 transition-colors duration-300'
           )}
         >
           <div className="flex flex-col">
