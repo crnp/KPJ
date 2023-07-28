@@ -11,7 +11,7 @@ export default function TaslimTable(props: TaslimTableProps) {
       <thead>
         <tr className="bg-gray-800">
           <th className="p-2">
-            <span>Nama-nama yang sudah bisa diambil iqomahnya</span>
+            <span>Nama-nama yang udah TASLIM</span>
           </th>
         </tr>
       </thead>
