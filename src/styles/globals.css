@@ -12,17 +12,18 @@ html {
   }
 }
 
-/* slightly transparent fallback */
-.frosted-glass {
-  /* background-color: rgba(255, 255, 255, .4); */
-  background-color: #2F272A
+
+@supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+  .frosted-glass {
+    background-color: #2F272A;
+  }
 }
 
 /* if backdrop support: very transparent and blurred */
 @supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
   .frosted-glass {
-    background-color: rgba(255, 255, 255, .5);
-    -webkit-backdrop-filter: blur(2em);
-    backdrop-filter: blur(2em);
+    /* background-color: #2F272A; */
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
   }
 }
