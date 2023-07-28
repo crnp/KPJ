@@ -64,9 +64,9 @@ export default function Footer() {
       </span>
       <div className="flex flex-row gap-1">
         <span className="text-white">Developed by</span>
-        <a href="https://instagram.com/cpr.studios" target="_blank">
+        <a href="https://instagram.com/allin.creative" target="_blank">
           <span className="group transition duration-300 font-semibold text-white">
-            CPR Studios
+            AI Creative
             <span className="block max-w-0 group-hover:max-w-full transition-all duration-400 h-0.5 bg-white"></span>
           </span>
         </a>

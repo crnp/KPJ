@@ -11,6 +11,7 @@ import { useState } from 'react';
 type ICarouselProps = {
   useSkeleton?: boolean;
   items: { img: StaticImageData; text: string }[];
+  spv: number;
 };
 
 export default function Carousel({
@@ -22,7 +23,7 @@ export default function Carousel({
   return (
     <div className="z-5">
       <Swiper
-        slidesPerView={3}
+        slidesPerView={props.spv}
         spaceBetween={20}
         centeredSlides={true}
         breakpoints={{

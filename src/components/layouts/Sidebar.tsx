@@ -10,10 +10,9 @@ export default function Sidebar() {
   const router = useRouter();
   return (
     <>
-      <div className="py-6 min-h-screen w-[45vw] flex justify-start bg-kpj-gray peer-focus:left-0 peer:transition ease-out delay-150 duration-200">
+      <div className="py-6 w-[100vw] flex justify-start bg-kpj-gray peer-focus:top-0 peer:transition ease-out delay-150 duration-200">
         <div className="flex flex-col justify-start items-center gap-4 w-full">
           <NextImage src={logo} width="86" height="0" alt="KPJ" className="" />
-          <Divider />
           {navItems.map((item) => (
             <Link
               href={item.href}

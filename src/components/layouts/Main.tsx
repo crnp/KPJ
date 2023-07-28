@@ -2,6 +2,7 @@ import { Fragment, useState } from 'react';
 import type { ReactNode } from 'react';
 
 import { GiHamburgerMenu } from 'react-icons/gi';
+import { IoMdClose } from 'react-icons/io';
 import { Dialog, Transition } from '@headlessui/react';
 import NextImage from '@/components/NextImage';
 
@@ -10,6 +11,8 @@ import Navbar from './Navbar';
 import { cx } from '@/utils/cx';
 import { useScrollPosition } from '@/utils/useScrollPositions';
 import Footer from './Footer';
+import navItems from '@/utils/nav';
+import Link from 'next/link';
 
 type IMainProps = {
   children: ReactNode;
@@ -23,65 +26,49 @@ export default function Main(props: IMainProps) {
       <div className="flex flex-col antialiased min-h-screen pattern-dots pattern-kpj-dots pattern-bg-kpj-brown pattern-size-24 pattern-opacity-100">
         <div
           className={cx(
-            scrollPos > 200 && 'bg-kpj-brown',
+            scrollPos > 100 && 'backdrop-blur-xl',
+            isOpen && 'backdrop-blur-xl',
             'sticky top-0 md:hidden z-20 transition-colors duration-300'
           )}
         >
-          <div className="flex justify-between items-center px-8 py-4">
-            <NextImage
-              src="/assets/images/logo.png"
-              width="32"
-              height="0"
-              alt="KPJ Mesir"
-            />
-            <GiHamburgerMenu
-              className="text-3xl text-white"
-              onClick={() => {
-                setIsOpen(true);
-              }}
-            />
+          <div className="flex flex-col">
+            <div className="flex justify-between items-center px-8 py-4">
+              <NextImage
+                src="/assets/images/logo.png"
+                width="32"
+                height="0"
+                alt="KPJ Mesir"
+              />
+              <GiHamburgerMenu
+                className={cx(isOpen && 'hidden', "text-3xl text-white")}
+                onClick={() => {
+                  setIsOpen(true);
+                }}
+              />
+              <IoMdClose
+                className={cx(isOpen ? 'block' : 'hidden', "text-3xl text-white")}
+                onClick={() => {
+                  setIsOpen(false);
+                }}
+              />
+            </div>
+            <ul className={cx(
+              scrollPos > 200 && 'backdrop-blur-xl',
+              isOpen ? 'block backdrop-blur-xl' : 'hidden',
+              'px-8 border-b-2 border-gray-400 font-montserrat'
+            )}>
+              {navItems.map((item) => (
+                <li key={item.name} className="text-white mb-2 text-xl">
+                  <Link href={item.href} >
+                    {item.name}
+                    {/* <Button active={router.route === item.href ? true : false}> */}
+                    {/* {item.name} */}
+                    {/* </Button> */}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          <Transition show={isOpen} as={Fragment}>
-            <Dialog
-              unmount={false}
-              onClose={() => {
-                setIsOpen(false);
-              }}
-              className="fixed z-40 inset-0 overflow-y-auto"
-            >
-              <div className="flex w-3/5">
-                <Transition.Child
-                  as={Fragment}
-                  enter="transition-opacity ease-in duration-300"
-                  enterFrom="opacity-0"
-                  enterTo="opacity-70"
-                  leave="transition-opacity ease-out duration-300"
-                  leaveFrom="opacity-70"
-                  leaveTo="opacity-0"
-                >
-                  <Dialog.Overlay className="z-20 fixed inset-0 bg-black bg-opacity-50" />
-                </Transition.Child>
-                <Transition.Child
-                  as={Fragment}
-                  enter="transition ease-in-out duration-300 transform"
-                  enterFrom="-translate-x-full"
-                  enterTo="translate-x-0"
-                  leave="transition ease-in-out duration-300 transform"
-                  leaveFrom="translate-x-0"
-                  leaveTo="-translate-x-full"
-                >
-                  <div
-                    className={`z-50 overflow-hidden
-                         shadow-xl`}
-                  >
-                    <aside className="overflow-y-auto md:hidden">
-                      <Sidebar />
-                    </aside>
-                  </div>
-                </Transition.Child>
-              </div>
-            </Dialog>
-          </Transition>
         </div>
         <nav
           className={cx(

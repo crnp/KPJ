@@ -31,6 +31,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'Arial', 'sans-serif'],
+        montserrat: ['Montserrat', 'Arial', 'sans-serif'],
         display: ['Sporta', 'Arial', 'sans-serif'],
       },
       colors: {

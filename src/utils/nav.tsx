@@ -4,10 +4,6 @@ const navItems = [
     href: '/',
   },
   {
-    name: 'Profile',
-    href: '/profile',
-  },
-  {
     name: 'Gallery',
     href: '/gallery',
   },

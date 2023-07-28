@@ -42,7 +42,7 @@ export default function Gallery() {
         <p
           className={`${sporta.className} text-white text-8xl tracking-widest whitespace-nowrap`}
         >
-          R GALLERY. <span className="text-kpj-orange">OUR GALLERY.</span> OUR
+          GALLERY. <span className="text-kpj-orange">OUR GALLERY.</span> OUR
           GALLERY.
         </p>
         <p
@@ -52,7 +52,12 @@ export default function Gallery() {
           GALLERY.
         </p>
       </div>
-      <CarouselGallery items={carouselItems} useSkeleton />
+      <div className="hidden md:block">
+        <CarouselGallery items={carouselItems} useSkeleton spv={3} />
+      </div>
+      <div className="block md:hidden">
+        <CarouselGallery items={carouselItems} useSkeleton spv={2} />
+      </div>
       <div className="flex flex-col items-center justify-center mb-6">
         <h1
           className={`${sporta.className} text-center text-5xl my-6 text-white tracking-widest md:tracking-[2rem]`}
