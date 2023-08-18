@@ -1,34 +1,43 @@
 import Meta from '@/components/layouts/Meta';
 import { sporta } from '@/utils/sporta';
 
-import image1 from '@/public/assets/images/thumbnail.jpg';
-import image2 from '@/public/assets/images/test.jpg';
-import image3 from '@/public/assets/images/light.jpg';
-import image4 from '@/public/assets/images/campfire.jpg';
-import image5 from '@/public/assets/images/house.jpg';
+import bola from '@/public/assets/images/bola.png';
+import palangpintu from '@/public/assets/images/palangpintu.png';
+import tari from '@/public/assets/images/tari.png';
+import marawis from '@/public/assets/images/marawis.png';
+import band from '@/public/assets/images/bandormaba.png';
+
+import aswaja from '@/public/assets/images/aswaja.png';
+import gallery1 from '@/public/assets/images/gallery1.png';
+import gallery2 from '@/public/assets/images/gallery2.png';
+import jaxes from '@/public/assets/images/jaxes.png';
+import jaxes2 from '@/public/assets/images/jaxes2.png';
+import ormabajaxes from '@/public/assets/images/ormabajaxes.png';
+import sosialita from '@/public/assets/images/sosialita.png';
+import syekh from '@/public/assets/images/syekh.png';
+import pp2 from '@/public/assets/images/pp2.png';
 
 import CarouselGallery from '@/components/layouts/CarouselGallery';
 import Image from 'next/image';
 
 const carouselItems = [
-  { img: image1 },
-  { img: image2 },
-  { img: image3 },
-  { img: image4 },
-  { img: image5 },
-  { img: image3 },
+  { img: bola },
+  { img: palangpintu },
+  { img: tari },
+  { img: marawis },
+  { img: band },
 ];
 
 const photos = [
-  image2,
-  image3,
-  image4,
-  image5,
-  image2,
-  image3,
-  image4,
-  image5,
-  image2,
+  aswaja,
+  gallery1,
+  gallery2,
+  jaxes,
+  jaxes2,
+  ormabajaxes,
+  sosialita,
+  syekh,
+  pp2,
 ];
 
 export default function Gallery() {

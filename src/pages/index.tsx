@@ -1,8 +1,14 @@
 import Meta from '@/components/layouts/Meta';
 import Carousel from '@/components/layouts/Carousel';
 
-import image1 from '@/public/assets/images/test.jpg';
-import image2 from '@/public/assets/images/thumbnail.jpg';
+import bola from '@/public/assets/images/bola.png';
+import palangpintu from '@/public/assets/images/palangpintu.png';
+import tari from '@/public/assets/images/tari.png';
+import marawis from '@/public/assets/images/marawis.png';
+import band from '@/public/assets/images/bandormaba.png';
+import heroimg from '@/public/assets/images/home.png';
+import rapat from '@/public/assets/images/rapat.png';
+import rapat2 from '@/public/assets/images/rapat2.png';
 
 import { sporta } from '@/utils/sporta';
 import Divider from '@/components/layouts/Divider';
@@ -15,12 +21,11 @@ import logo from '@/public/assets/images/logo.png';
 import { HiArrowDown } from 'react-icons/hi';
 
 const carouselItems = [
-  { img: image1, text: 'The Jak FC' },
-  { img: image2, text: 'Pencak Silat' },
-  { img: image1, text: 'Seni Tari ' },
-  { img: image2, text: 'Hadroh ' },
-  { img: image1, text: 'Keputrian ' },
-  { img: image2, text: 'Band ' },
+  { img: bola, text: 'The Jak FC' },
+  { img: palangpintu, text: 'Pencak Silat' },
+  { img: tari, text: 'Seni Tari' },
+  { img: marawis, text: 'Marawis' },
+  { img: band, text: 'Band' },
 ];
 
 export default function Home() {
@@ -58,7 +63,7 @@ export default function Home() {
       </Section> */}
       <Section>
         <div className="relative h-[20rem] md:mt-20">
-          <Image src={image1} alt="Profil" fill className="object-cover" />
+          <Image src={heroimg} alt="Profil" fill className="object-cover" />
           <h1
             className={`${sporta.className} text-kpj-orange text-3xl md:text-6xl lg:text-7xl xl:text-8xl tracking-widest w-full text-center -top-[5%] md:-top-[9%] lg:-top-[13%] absolute`}
           >
@@ -179,7 +184,7 @@ export default function Home() {
             </div>
           </div>
           <div className="order-1 mb-6 md:mb-0 basis-1/2 items-center">
-            <Image src={image1} width={550} height={0} alt="KPJ" />
+            <Image src={rapat} width={550} height={0} alt="KPJ" />
           </div>
         </div>
         <div className="flex flex-col md:flex-row mt-8 items-center justify-between">
@@ -205,7 +210,7 @@ export default function Home() {
             </div>
           </div>
           <div className="flex order-1 mb-6 md:mb-0 md:order-2 ">
-            <Image src={image1} width={550} height={0} alt="KPJ" />
+            <Image src={rapat2} width={550} height={0} alt="KPJ" />
           </div>
         </div>
       </Section>
